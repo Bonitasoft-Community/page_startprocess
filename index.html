@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Processes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="pageResource?page=custompage_startprocess&location=style/animate.css" />
+    <link rel="stylesheet" href="pageResource?page=custompage_startprocess&location=style/bootstrap.min.css">
+	<link rel="stylesheet" href="pageResource?page=custompage_startprocess&location=style/main.css">
+	<link rel="stylesheet" href="pageResource?page=custompage_startprocess&location=style/style.css">
+ 
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;hl=fr&amp;packages=corechart&amp;async=2"></script>
+	<link type="text/css" href="https://www.google.com/uds/api/visualization/1.0/ff67c3772da186a412ae3231c32409e9/ui+fr.css" rel="stylesheet">
+	<script type="text/javascript" src="https://www.google.com/uds/api/visualization/1.0/ff67c3772da186a412ae3231c32409e9/format+fr,default+fr,ui+fr,corechart+fr.I.js"></script>
+	<link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
+		
+		
+</head>
+<body ng-app="startprocessapp">
+<!--
+<center>
+	<table><tr><td><h1>StartProcess</h1></td><td rowspan="2"><img src="pageResource?page=custompage_startprocess&location=img/rockettruck.jpg" width="150" heigth="150" /></td></tr>
+		<tr><td style="font-size:0.8em">V1.0</a></td></tr>
+		</div>
+	</table>
+	</center>
+-->
+
+	<div class="col-lg-12" ng-controller="StartProcess as startprocessctrl">
+		<legend class="text-primary"><span class="glyphicon glyphicon-th"></span>Processes</legend>
+		
+		<div class="col-lg-6" >
+			<table class="table table-striped TaskTable">
+				<tbody ng-repeat="oneprocess in startprocessctrl.listprocesses track by $index" class="panel panel-danger">
+					<tr >
+						<td>{{oneprocess.displayName}}</td> 
+						<td> {{oneprocess.version}}</td> 
+					</tr>
+					<tr>
+						<td>{{oneprocess.description}}</td>
+						<td><button ng-click="startprocessctrl.startit( oneprocess )" class="btn btn-primary">Start</button> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="col-lg-6"  style="height:800px">
+			
+				<iframe src="{{startprocessctrl.getStartHtml()}}" height="100%" width="100%" ></iframe>
+		</div>
+		
+	</div>
+
+
+<!-- Third party dependencies -->
+
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/jquery.min.js"></script>
+
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/angular.min.js"></script>
+
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/angular-resource.min.js"></script>
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/angular-cookies.min.js"></script>
+
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/bootstrap/js/bootstrap.min.js"></script>
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/angular-bootstrap-tpls.min.js"></script>
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/angular-file-upload.js"></script> 
+<script src="pageResource?page=custompage_startprocess&location=3rd-party/ng-google-chart.js"></script> 
+
+
+<!-- Application dependencies -->
+<script src="pageResource?page=custompage_startprocess&location=startprocessmonitor.js"></script>
+
+</body>
+</html>		
