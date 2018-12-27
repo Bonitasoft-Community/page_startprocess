@@ -1,3 +1,2 @@
-The Scooter page display a QRCODE. Simply scan it by your mobile, and you will access immediately on the Bonita Portal for mobile
-
-<img src="screenshoot_scooter.jpg"/>
+Start process display the list of process, and in the right part, the instantiation form (same look and feel as the task list)
+<img src="screenshoot_startprocess.jpg"/>
